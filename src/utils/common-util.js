@@ -21,3 +21,17 @@ export const on = (type, el, listener, all = false) => {
         }
     }
 }
+
+/**
+ * Scrolls to an element with header offset
+ */
+export const scrollTo = (el) => {
+    let header = select('#header')
+    let offset = header.offsetHeight
+
+    let elementPos = select(el).offsetTop
+    window.scrollTo({
+        top: elementPos - offset,
+        behavior: 'smooth'
+    })
+}

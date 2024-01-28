@@ -1,5 +1,47 @@
 <script setup>
+import {onMounted} from "vue"
+import { select, scrollTo, on } from "@/utils/common-util";
 import settings from "@/settings";
+
+onMounted(() => {
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    e.target.classList.toggle('bi-list')
+    e.target.classList.toggle('bi-x')
+  })
+
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      e.target.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
+
+  /**
+   * Scroll with offset on links with a class name .scrollto
+   */
+  on('click', '.scrollto', function(e) {
+    if (select(e.target.hash)) {
+      e.preventDefault()
+
+      let navbar = select('#navbar')
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+      scrollTo(e.target.hash)
+    }
+  }, true)
+})
+
 </script>
 
 <template>
