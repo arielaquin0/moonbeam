@@ -21,14 +21,14 @@ import Footer from "./views/footer/index.vue";
 const mainSections = [
   { id: 'clients', class: 'clients section-bg', component: ClientSection },
   { id: 'about', class: 'about', component: AboutUsSection },
-  { id: 'why-us', class: 'why-us section-bg', component: WhyUsSection },
-  { id: 'skills', class: 'skills', component: SkillsSection },
-  { id: 'services', class: 'services section-bg', component: ServicesSection },
+  // { id: 'why-us', class: 'why-us section-bg', component: WhyUsSection },
+  // { id: 'skills', class: 'skills', component: SkillsSection },
+  // { id: 'services', class: 'services section-bg', component: ServicesSection },
   { id: 'cta', class: 'cta', component: CtaSection },
-  { id: 'portfolio', class: 'portfolio', component: PortfolioSection },
+  // { id: 'portfolio', class: 'portfolio', component: PortfolioSection },
   { id: 'team', class: 'team section-bg', component: TeamSection },
-  { id: 'pricing', class: 'pricing', component: PricingSection },
-  { id: 'faq', class: 'faq section-bg', component: FaqSection },
+  // { id: 'pricing', class: 'pricing', component: PricingSection },
+  // { id: 'faq', class: 'faq section-bg', component: FaqSection },
   { id: 'contact', class: 'contact', component: ContactSection },
 ];
 
